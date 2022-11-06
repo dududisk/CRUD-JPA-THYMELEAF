@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org" th:fragment="layout (conteudo)" >
+    <head>
+    <title>Thymeleaf - Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"  rel="stylesheet">
+    </head>
+    <body>    
+        <header th:replace="~{layout/fragments/header :: cabecalho ('Texto do cabeçalho')}"> </header>
+        
+        <main   th:include="${conteudo}"></main>
+        
+        <footer th:replace="~{layout/fragments/footer :: rodape ('Texto do Rodape')}"> </footer>
+    </body>
+</html>
+
+

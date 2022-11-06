@@ -1,0 +1,37 @@
+<header 
+ th:replace="~{layout/fragments/header :: cabecalho ('Texto do cabeçalho')}"
+>
+</header> 
+
+<h1>FORMULARIO DE PRODUTOS</h1>
+
+<form method="post" action="#" th:action="@{/produto/salvar}" th:object="${produto}">
+    <div class="form-group">
+        <label for="nome" class="form-label">Nome</label>
+        <input class="form-control" type="text" id="nome" th:field="*{nome}">
+        <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="preco" class="form-label">Preço</label>         
+        <input class="form-control" type="text" id="preco" th:field="*{preco}">
+        <span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="quantidade" class="form-label">Quantidade</label>         
+        <input class="form-control" type="text" id="quantidade" th:field="*{quantidade}">
+        <span th:if="${#fields.hasErrors('quantidade')}" th:errors="*{quantidade}"></span>
+    </div>
+   
+    <div class="form-group">     
+        <button class="form-control" type="submit" >Salvar</button>
+    </div>   
+</form>
+
+
+<footer 
+ th:replace="~{layout/fragments/footer :: rodape ('Texto do Rodape')}"
+>
+</footer>
+

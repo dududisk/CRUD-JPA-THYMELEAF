@@ -1,0 +1,11 @@
+<header th:replace="~{layout/fragments/header :: cabecalho ('Texto do cabeçalho')}"></header> 
+
+<h1>Excluir Produto</h1>
+
+<form method="post" th:action="@{/produto/delete/{id}(id=${produto.id})}">
+    Deseja Realmente Excluir o Produto <span th:text="${produto.nome}"></span>
+    <button class="form-control" type="submit" >Confirmar</button>
+</form>
+
+<footer  th:replace="~{layout/fragments/footer :: rodape ('Texto do Rodape')}"></footer>
+

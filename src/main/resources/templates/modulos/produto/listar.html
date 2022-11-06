@@ -1,0 +1,25 @@
+<div th:replace="~{layout/master :: layout (~{:: main})}">
+    <main>    
+        <h1>LISTA DE PRODUTOS</h1>
+        <table class="table table-light">
+            <tr class="table-dark">
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+            </tr>
+
+            <tr th:each="produto: ${produtos}">
+                <td><span th:text="${produto.nome}"></span></td>
+                <td><span th:text="${produto.preco}"></span></td>
+                <td><span th:text="${produto.quantidade}"></span></td>
+                <td class="buttons">     
+                    <a th:href="@{/produto/editar/{id}(id=${produto.id})}">Editar</a>
+                    <a th:href="@{/produto/excluir/{id}(id=${produto.id})}">Excluir</a>
+                </td>
+            </tr>
+           
+        </table>
+    </main>
+</div>
+
+
